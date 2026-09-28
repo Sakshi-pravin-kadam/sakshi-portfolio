@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" fill="none">
+  <defs>
+    <linearGradient id="avatarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0b1120"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#2dd4bf"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Base Circle -->
+  <circle cx="180" cy="180" r="165" fill="url(#avatarBg)"/>
+  
+  <!-- Subtle Tech Grid Lines -->
+  <circle cx="180" cy="180" r="140" stroke="#334155" stroke-width="1.2" stroke-dasharray="6 6" opacity="0.4"/>
+  <circle cx="180" cy="180" r="165" stroke="url(#ringGrad)" stroke-width="2.5" opacity="0.6"/>
+
+  <!-- Developer Silhouette / Placeholder Portrait -->
+  <g transform="translate(0, 10)">
+    <!-- Base aura glow -->
+    <ellipse cx="180" cy="270" rx="90" ry="50" fill="#38bdf8" opacity="0.12" filter="url(#softGlow)"/>
+
+    <!-- Shoulders / Torso -->
+    <path d="M 105 310 C 105 250, 130 230, 180 230 C 230 230, 255 250, 255 310 Z" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.4"/>
+    
+    <!-- Neck -->
+    <rect x="170" y="195" width="20" height="35" rx="8" fill="#334155"/>
+
+    <!-- Head & Silhouette -->
+    <ellipse cx="180" cy="160" rx="48" ry="56" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.3"/>
+    
+    <!-- Hairline / Stylized cut -->
+    <path d="M 132 155 C 132 105, 150 95, 180 95 C 210 95, 228 105, 228 155 C 228 185, 222 205, 222 205 C 215 175, 210 160, 205 150 C 195 135, 165 135, 155 150 C 150 160, 145 175, 138 205 C 138 205, 132 185, 132 155 Z" fill="#0f172a" stroke="#818cf8" stroke-width="1.5" stroke-opacity="0.5"/>
+
+    <!-- Developer Glasses Accent -->
+    <rect x="148" y="148" width="28" height="18" rx="5" fill="#0b1120" stroke="#38bdf8" stroke-width="1.8"/>
+    <rect x="184" y="148" width="28" height="18" rx="5" fill="#0b1120" stroke="#38bdf8" stroke-width="1.8"/>
+    <line x1="176" y1="156" x2="184" y2="156" stroke="#38bdf8" stroke-width="1.8"/>
+  </g>
+
+  <!-- Bottom Title Badge -->
+  <g transform="translate(75, 305)">
+    <rect width="210" height="32" rx="16" fill="#090d16" stroke="rgba(56, 189, 248, 0.5)" stroke-width="1"/>
+    <circle cx="20" cy="16" r="4" fill="#10b981"/>
+    <text x="115" y="21" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#e2e8f0" letter-spacing="0.5">Sakshi Kadam • Portfolio</text>
+  </g>
+</svg>

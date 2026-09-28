@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="foodBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1320"/>
+      <stop offset="100%" stop-color="#060911"/>
+    </linearGradient>
+    <linearGradient id="chatGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="fastapiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+    <filter id="chatGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Window Frame -->
+  <rect width="800" height="500" rx="16" fill="url(#foodBg)"/>
+  <rect x="1" y="1" width="798" height="498" rx="15" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Title Bar -->
+  <path d="M 0 16 C 0 7.16 7.16 0 16 0 L 784 0 C 792.84 0 800 7.16 800 16 L 800 44 L 0 44 Z" fill="#0f172a"/>
+  <circle cx="28" cy="22" r="5" fill="#ef4444"/>
+  <circle cx="46" cy="22" r="5" fill="#f59e0b"/>
+  <circle cx="64" cy="22" r="5" fill="#10b981"/>
+
+  <!-- URL Bar -->
+  <rect x="100" y="10" width="460" height="24" rx="6" fill="#1e293b"/>
+  <text x="120" y="26" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94a3b8">localhost:8000/api/v1/orders • FastAPI + Dialogflow Agent</text>
+
+  <rect x="580" y="12" width="105" height="20" rx="4" fill="#064e3b" stroke="#059669" stroke-width="1"/>
+  <circle cx="592" cy="22" r="3" fill="#10b981"/>
+  <text x="602" y="26" font-family="sans-serif" font-size="10" font-weight="700" fill="#34d399">FASTAPI LIVE API</text>
+
+  <!-- Left Side: Interactive Food Catalog & Cart (460px) -->
+  <g transform="translate(30, 60)">
+    <!-- Header -->
+    <rect width="430" height="50" rx="8" fill="#111827" stroke="#1f2937" stroke-width="1"/>
+    <text x="20" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Food Ordering Dashboard</text>
+    <rect x="330" y="12" width="85" height="26" rx="6" fill="#1e293b"/>
+    <text x="372" y="29" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#38bdf8">🛒 Cart (2 items)</text>
+
+    <!-- Menu Grid -->
+    <!-- Item 1 -->
+    <g transform="translate(0, 65)">
+      <rect width="205" height="155" rx="8" fill="#111827" stroke="#1f2937" stroke-width="1"/>
+      <rect x="12" y="12" width="181" height="65" rx="6" fill="#1e293b"/>
+      <text x="102" y="48" text-anchor="middle" font-size="24">🍕</text>
+      <text x="14" y="96" font-family="sans-serif" font-size="12" font-weight="700" fill="#f3f4f6">Paneer Tikka Pizza</text>
+      <text x="14" y="112" font-family="sans-serif" font-size="10" fill="#9ca3af">Thin crust, fresh paneer</text>
+      <text x="14" y="136" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#10b981">₹299</text>
+      <rect x="145" y="120" width="48" height="22" rx="4" fill="url(#fastapiGrad)"/>
+      <text x="169" y="135" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#ffffff">+ Add</text>
+    </g>
+
+    <!-- Item 2 -->
+    <g transform="translate(225, 65)">
+      <rect width="205" height="155" rx="8" fill="#111827" stroke="#1f2937" stroke-width="1"/>
+      <rect x="12" y="12" width="181" height="65" rx="6" fill="#1e293b"/>
+      <text x="102" y="48" text-anchor="middle" font-size="24">🍔</text>
+      <text x="14" y="96" font-family="sans-serif" font-size="12" font-weight="700" fill="#f3f4f6">Gourmet Veggie Burger</text>
+      <text x="14" y="112" font-family="sans-serif" font-size="10" fill="#9ca3af">Double crisp patty</text>
+      <text x="14" y="136" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#10b981">₹189</text>
+      <rect x="145" y="120" width="48" height="22" rx="4" fill="url(#fastapiGrad)"/>
+      <text x="169" y="135" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#ffffff">+ Add</text>
+    </g>
+
+    <!-- Order Tracking Bar -->
+    <g transform="translate(0, 235)">
+      <rect width="430" height="175" rx="8" fill="#111827" stroke="#1f2937" stroke-width="1"/>
+      <text x="20" y="30" font-family="sans-serif" font-size="13" font-weight="700" fill="#f8fafc">Real-Time Order Tracking Pipeline</text>
+      <text x="20" y="48" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">Order ID: #ORD-98214 • MySQL Transaction Logged</text>
+
+      <!-- Steps Pipeline -->
+      <g transform="translate(20, 70)">
+        <circle cx="20" cy="15" r="14" fill="#059669"/>
+        <text x="20" y="19" text-anchor="middle" font-size="11" fill="#ffffff">✓</text>
+        <line x1="34" y1="15" x2="110" y2="15" stroke="#059669" stroke-width="2"/>
+
+        <circle cx="125" cy="15" r="14" fill="#059669"/>
+        <text x="125" y="19" text-anchor="middle" font-size="11" fill="#ffffff">✓</text>
+        <line x1="139" y1="15" x2="215" y2="15" stroke="#38bdf8" stroke-width="2"/>
+
+        <circle cx="230" cy="15" r="14" fill="#0284c7" filter="url(#chatGlow)"/>
+        <text x="230" y="19" text-anchor="middle" font-size="11" fill="#ffffff">⏳</text>
+        <line x1="244" y1="15" x2="320" y2="15" stroke="#334155" stroke-width="2"/>
+
+        <circle cx="335" cy="15" r="14" fill="#1e293b"/>
+        <text x="335" y="19" text-anchor="middle" font-size="11" fill="#64748b">🛵</text>
+
+        <text x="20" y="44" text-anchor="middle" font-size="9" fill="#94a3b8">Placed</text>
+        <text x="125" y="44" text-anchor="middle" font-size="9" fill="#94a3b8">Confirmed</text>
+        <text x="230" y="44" text-anchor="middle" font-size="9" font-weight="700" fill="#38bdf8">Preparing</text>
+        <text x="335" y="44" text-anchor="middle" font-size="9" fill="#64748b">Delivered</text>
+      </g>
+      
+      <!-- Tech Badge in Tracker -->
+      <rect x="20" y="135" width="390" height="26" rx="4" fill="#0b1329"/>
+      <text x="30" y="152" font-family="'JetBrains Mono', monospace" font-size="10" fill="#38bdf8">&gt; FastAPI Webhook POST /order-status [HTTP 200 OK - 18ms]</text>
+    </g>
+  </g>
+
+  <!-- Right Side: Dialogflow AI Chatbot Window (290px) -->
+  <g transform="translate(480, 60)">
+    <rect width="290" height="410" rx="10" fill="#0d1527" stroke="#2563eb" stroke-width="1.5" filter="url(#chatGlow)"/>
+    
+    <!-- Chat Header -->
+    <path d="M 0 10 C 0 4.48 4.48 0 10 0 L 280 0 C 285.52 0 290 4.48 290 10 L 290 48 L 0 48 Z" fill="#1e293b"/>
+    <circle cx="25" cy="24" r="10" fill="#0284c7"/>
+    <text x="25" y="28" text-anchor="middle" font-size="12">🤖</text>
+    <text x="45" y="24" font-family="sans-serif" font-size="12" font-weight="700" fill="#f8fafc">FoodBot AI Assistant</text>
+    <text x="45" y="38" font-family="sans-serif" font-size="9" fill="#10b981">● Dialogflow Connected</text>
+
+    <!-- Chat Messages -->
+    <rect x="15" y="65" width="200" height="42" rx="8" fill="#1e293b"/>
+    <text x="25" y="82" font-family="sans-serif" font-size="10" fill="#e2e8f0">Hi Sakshi! What would you</text>
+    <text x="25" y="96" font-family="sans-serif" font-size="10" fill="#e2e8f0">like to eat today?</text>
+
+    <rect x="85" y="118" width="190" height="38" rx="8" fill="url(#chatGrad)"/>
+    <text x="95" y="134" font-family="sans-serif" font-size="10" fill="#ffffff">Recommend me top spicy</text>
+    <text x="95" y="147" font-family="sans-serif" font-size="10" fill="#ffffff">vegetarian dishes.</text>
+
+    <rect x="15" y="166" width="245" height="74" rx="8" fill="#1e293b"/>
+    <text x="25" y="183" font-family="sans-serif" font-size="10" fill="#38bdf8">Top Recommendation:</text>
+    <text x="25" y="198" font-family="sans-serif" font-size="10" fill="#e2e8f0">1. Paneer Tikka Pizza (₹299)</text>
+    <text x="25" y="213" font-family="sans-serif" font-size="10" fill="#e2e8f0">2. Spicy Veggie Supreme</text>
+    <text x="25" y="228" font-family="sans-serif" font-size="9" fill="#94a3b8">Should I add #1 to your cart?</text>
+
+    <rect x="145" y="250" width="130" height="30" rx="8" fill="url(#chatGrad)"/>
+    <text x="155" y="270" font-family="sans-serif" font-size="10" fill="#ffffff">Yes, add 1 pizza!</text>
+
+    <rect x="15" y="290" width="230" height="48" rx="8" fill="#064e3b" stroke="#059669" stroke-width="1"/>
+    <text x="25" y="308" font-family="sans-serif" font-size="10" font-weight="700" fill="#34d399">✓ Added to Cart via Intent</text>
+    <text x="25" y="324" font-family="sans-serif" font-size="9" fill="#a7f3d0">MySQL Session Synchronized</text>
+
+    <rect x="12" y="355" width="266" height="42" rx="8" fill="#1e293b"/>
+    <text x="24" y="380" font-family="sans-serif" font-size="10" fill="#64748b">Type "track #ORD-98214"...</text>
+    <circle cx="258" cy="376" r="14" fill="#0284c7"/>
+    <text x="258" y="380" text-anchor="middle" font-size="11" fill="#ffffff">➤</text>
+  </g>
+</svg>
